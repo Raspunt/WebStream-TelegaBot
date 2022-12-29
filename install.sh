@@ -9,15 +9,15 @@ sudo apt install libavformat-dev -y
 sudo apt install libswscale-dev -y
 sudo apt install libgtk-3-dev -y
 sudo apt install ffmpeg -y
-
+sudo apt install python3-pip -y
 
 touch .env 
 
 echo "
-    API_TOKEN=''
+API_TOKEN=''
 
-    username='pi-robot'
-    password='qaqsqdqe'
+username='pi-robot'
+password='qaqsqdqe'
 
 " > .env
 
