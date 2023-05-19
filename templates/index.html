@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Stream</title>
+  <link rel="stylesheet" href="static/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+  <div id="app">
+
+    <div class="centerContent">
+
+      
+      <div class="centerCamera" v-if="showVideo == true">
+        
+        <div class='configBtn' id='configBtn'>
+          
+        <button class="TopBtn" @click='this.StartCamera()'>
+          <i class="fa-solid fa-play"></i>
+        </button>
+        
+        <button class="TopBtn"  @click='this.StopCamera()'>
+          <i class="fa-solid fa-stop"></i>
+        </button>
+        
+        <button class="TopBtn" @click='this.RotateCamera()'>
+          <i class="fa-sharp fa-solid fa-rotate"></i>
+        </button>
+
+        <button class="TopTextBtn" @click='this.EnableAnalizator()'>
+          <small>найти обьектын на видео</small>
+        </button>
+
+        <button class="TopTextBtn" @click='this.EnableFaceRecognation()'>
+          <small>распознование лиц</small>
+        </button>
+        
+        
+
+ 
+        </div>
+
+
+            <div class="bgCamera">
+              <img id='camera' class="camera" src="{{ url_for('video_feed') }}">
+            </div>
+            
+          
+            
+            <div class="grid-container">
+              <div class="grid-item"></div>
+    
+                <button  @click="this.SendMotorSignal('V','upBtn')">
+                  <div class="grid-item" id="upBtn">
+                    <i class="fa-sharp fa-solid fa-arrow-up"></i>
+                  </div>
+                </button>
+                
+              <div class="grid-item"></div>
+
+              
+              <button @click="this.SendMotorSignal('L','leftBtn')">
+                <div class="grid-item" id="leftBtn">
+                  <i class="fa-solid fa-arrow-left-long"></i>
+                </div>
+              </button>
+                
+
+              <div class="grid-item"></div>
+
+              <button  @click="this.SendMotorSignal('R','rightBtn')">
+                <div class="grid-item" id="rightBtn">
+                  <i class="fa-solid fa-arrow-right-long"></i>
+                </div>
+              </button>
+              
+              <div class="grid-item"></div>
+              
+              <button  @click="this.SendMotorSignal('NAZ','downBtn')">
+                <div class="grid-item" id="downBtn">
+                  <i class="fa-solid fa-arrow-down"></i>
+                </div>
+              </button>
+
+              <div class="grid-item"></div>
+            </div> 
+
+
+
+          <div id="CameraData">
+            <p>
+              resoltion-{{ resolution  }}
+            </p> 
+          </div>
+
+
+          <div class="loginDiv" v-if="showVideo == false">
+
+            <label for="uname"><b>Username</b></label>
+            <input v-model="this.username" type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input v-model="this.password" type="password" placeholder="Enter Password" name="psw" required>
+
+            <button @click='CheckUser()' type="submit">потвердить</button>
+
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+ 
+    <script type="application/javascript" src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
+      integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script type="application/javascript" src="static/js/vueApp.js"></script>
+    <script type="application/javascript" src="static/js/keyboardListner.js"></script>
+
+
+
+
+
+</body>
+
+</html>

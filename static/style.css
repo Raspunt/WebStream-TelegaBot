@@ -1,0 +1,221 @@
+
+body { 
+  min-height: 100vh;
+  margin:0;
+  padding:0;
+  background-color:#0b2736 !important ;
+}
+
+
+
+
+.configBtn{
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 800px; ;
+}
+
+
+#CameraData{
+ color:white;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+
+
+
+.grid-container button {
+  border: none;
+  background-color: none;
+  
+}
+
+
+
+.centerCamera{
+    display: flex;
+    justify-content: center;
+    flex-direction:column ;
+    align-items: center;
+}
+
+
+
+.camera {
+    width:800px ;
+    height:800px;
+    justify-content: center;
+    align-items: center;
+}
+
+.bgCamera{
+  display: flex;
+
+  background-color: black;
+  width: 800px;
+  height: 800px;
+}
+
+.motorBtn{
+  width:800px
+}
+
+
+.TopBtn{
+  width:50px;
+  height:50px;
+}
+
+
+.TopTextBtn{
+  height:50px;
+}
+
+.BtnText{
+  height:50px;
+}
+
+
+@media only screen and (max-width: 800px) {  
+
+
+  .motorBtn{
+    width:750px
+  }
+  
+
+  .camera {
+    width:750px;
+  }
+
+  .bgCamera{
+    width:750px;
+  }
+}
+
+
+@media only screen and (max-width: 700px) {  
+
+
+  .motorBtn{
+    width:650px
+  }
+
+  .camera {
+    width:650px;
+  }
+
+  .bgCamera{
+    width:650px;
+  }
+
+  .configBtn{
+    width: 650px;
+  }
+  
+}
+
+
+@media only screen and (max-width: 600px) {  
+
+
+  .motorBtn{
+    width:500px
+  }
+
+  .camera {
+    width:500px;
+    height:500px;
+  }
+
+  .bgCamera{
+    width:500px;
+    height:500px;
+  }
+
+  .configBtn{
+    width: 500px;
+  }
+  
+  
+}
+
+@media only screen and (max-width: 500px) {  
+
+  .motorBtn{
+    width:450px
+  }
+
+  .camera {
+    width:450px;
+    height:450px;
+  }
+
+  .bgCamera{
+    width:450px;
+    height:450px;
+  }
+
+
+  .configBtn{
+    width: 450px;
+  }
+  
+  
+}
+
+
+@media only screen and (max-width: 400px) {  
+
+  .motorBtn{
+    width:320px
+  }
+
+  .camera {
+    width:320px;
+    height:320px;
+  }
+
+  .bgCamera{
+    width:320px;
+    height:320px;
+  }
+
+
+  .configBtn{
+    width: 320px;
+  }
+  
+  
+}
+
+
+
+
+
+.flex_container{
+  display: flex;
+  flex-direction: row;
+}
+
+.loginDiv{
+  display:flex;
+  flex-direction: column;
+
+  margin:30px;
+
+  align-items: center;
+  justify-content:center;
+
+}
